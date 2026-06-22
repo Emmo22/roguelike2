@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bpwig1dy3elit"]
+
+[ext_resource type="PackedScene" uid="uid://ptcmqac8j1uv" path="res://LevelEditor/gui/item_slime_blue.tscn" id="1_36onr"]
+[ext_resource type="PackedScene" uid="uid://7fq2vo6hdosa" path="res://LevelEditor/gui/item_blocks.tscn" id="2_o5qov"]
+[ext_resource type="PackedScene" uid="uid://cy1i1d0ex5qhu" path="res://LevelEditor/gui/item_slime_red.tscn" id="3_g38ea"]
+[ext_resource type="Script" uid="uid://lhd0waqakl1a" path="res://LevelEditor/scripts/item_select.gd" id="3_select"]
+
+[node name="Control" type="Control" unique_id=1337996506]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_select")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=396802908]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 12.0
+offset_right = 1585.0
+offset_bottom = 268.0
+current_tab = 0
+
+[node name="Enemies" type="TabBar" parent="TabContainer" unique_id=900465079]
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Enemies" unique_id=1476162563]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 16.0
+offset_right = 350.0
+offset_bottom = 211.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Enemies/ScrollContainer" unique_id=353594129]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Enemies/ScrollContainer/VBoxContainer" unique_id=1431720886]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+
+[node name="Item_slime_blue" parent="TabContainer/Enemies/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=756391057 instance=ExtResource("1_36onr")]
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+
+[node name="Item_slime_red" parent="TabContainer/Enemies/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1843279449 instance=ExtResource("3_g38ea")]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 2
+
+[node name="Sprites" type="TabBar" parent="TabContainer" unique_id=2022500430]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sprites" unique_id=1137419857]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 15.0
+offset_right = 384.0
+offset_bottom = 213.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sprites/ScrollContainer" unique_id=38922058]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Sprites/ScrollContainer/VBoxContainer" unique_id=102244119]
+layout_mode = 2
+
+[node name="ItemBlocks" parent="TabContainer/Sprites/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=840521129 instance=ExtResource("2_o5qov")]
+layout_mode = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=111111222]
+
+[node name="HTTPGet" type="HTTPRequest" parent="." unique_id=111111223]
+
+[node name="Button" type="Button" parent="." unique_id=102603736]
+layout_mode = 0
+offset_left = 1370.0
+offset_top = 797.0
+offset_right = 1534.0
+offset_bottom = 863.0
+text = "Start"
